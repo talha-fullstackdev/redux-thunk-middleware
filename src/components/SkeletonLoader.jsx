@@ -10,7 +10,7 @@ const SkeletonLoader = () => {
         className="shadow-lg rounded-lg overflow-hidden p-4"
       >
         <SkeletonTheme baseColor="#C0C0C0" highlightColor="#A9A9A9"  duration={1.2}>
-          <Skeleton height="300px" width="100%" />
+          <Skeleton height="280px" width="100%" />
           <div className="mt-4">
             <Skeleton width="80%" height="25px" />
             <Skeleton width="60%" height="20px" className="mt-2" />

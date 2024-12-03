@@ -1,5 +1,7 @@
 
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from 'react-toastify';
+
 
 // Fetch movies data asynchronously with async/await and a delay
 export const fetchMovies = createAsyncThunk("fetchMovies", async () => {
@@ -39,10 +41,12 @@ const MoviesSlice = createSlice({
       .addCase(fetchMovies.fulfilled, (state, action) => {
         state.isLoading = false;
         state.moviesData = action.payload; // Store the API response
+        toast.success("movies loaded 🎊")
       })
       .addCase(fetchMovies.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message; // Store the error message
+        toast.error("failed to load! ")
       });
   },
 });

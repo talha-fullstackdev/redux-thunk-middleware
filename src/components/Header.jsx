@@ -14,7 +14,7 @@ const Header = () => {
         onClick={() => dispatch(fetchMovies())}
         className="bg-blue-500 text-white px-4 py-2 rounded "
       >
-        {isLoading ? "fetching ..." : "Fetch Movies"}
+        {isLoading ? "Fetching ..⏳" : "Fetch Movies"}
       </button>
       {error && <p className="text-red-500 mt-2">Error: {error}</p>}
       <Card />
