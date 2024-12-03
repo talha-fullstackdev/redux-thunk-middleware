@@ -3,10 +3,12 @@ import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { useSelector } from "react-redux";
 import "react-loading-skeleton/dist/skeleton.css"; // Import Skeleton CSS
+
 const Card = () => {
   const { moviesData, isLoading } = useSelector((state) => state.MoviesSlice);
 
   if (isLoading) {
+    // Display skeleton loaders for cards
     return (
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
         {Array.from({ length: 16 }).map((_, index) => (
@@ -28,7 +30,8 @@ const Card = () => {
     );
   }
 
-  if (!moviesData || !moviesData.results) {   // Display movie cards if data is available
+  // Display movie cards if data is available
+  if (!moviesData || !moviesData.results) {
     return <p className="text-lg mt-2 ">click the button to fetch movies</p>;
   }
 
