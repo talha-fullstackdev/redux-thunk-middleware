@@ -32,7 +32,7 @@ const Card = () => {
 
   // Display movie cards if data is available
   if (!moviesData || !moviesData.results) {
-    return <p>No movies available</p>;
+    return <p className="text-lg mt-2 ">click the button to fetch movies</p>;
   }
 
   return (
