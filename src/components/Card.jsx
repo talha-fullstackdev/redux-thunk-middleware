@@ -4,19 +4,16 @@ import SkeletonLoader from "./SkeletonLoader";
 import { useSelector } from "react-redux";
 const Card = () => {
   const { moviesData, isLoading } = useSelector((state) => state.MoviesSlice);
-
   if (isLoading) {
     // Display skeleton loaders for cards
     return (
       <SkeletonLoader/>
     );
   }
-
   // Display movie cards if data is available
   if (!moviesData || !moviesData.results) {
     return <p className="text-lg mt-2 ">click the button to fetch movies</p>;
   }
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
       {moviesData.results.map((movie) => (
@@ -50,5 +47,4 @@ const Card = () => {
     </div>
   );
 };
-
 export default Card;
