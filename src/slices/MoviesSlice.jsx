@@ -1,14 +1,9 @@
 
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from 'react-toastify';
-
-
-// Fetch movies data asynchronously with async/await and a delay
-export const fetchMovies = createAsyncThunk("fetchMovies", async () => {
+export const fetchMovies = createAsyncThunk("fetchMovies", async () => { //redux thunk midddleware,  Fetch movies data asynchronously with async/await and a delay
   try {
-    // Simulate API delay with setTimeout
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
+    await new Promise((resolve) => setTimeout(resolve, 2000));    // Simulate API delay with setTimeout
     const response = await fetch(
       "https://api.themoviedb.org/3/movie/popular?api_key=97b85a3e493dbe5c6ec0337641ae6907"
     );
