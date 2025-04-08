@@ -4,7 +4,7 @@ import { fetchMovies } from "../slices/MoviesSlice";
 import Card from "./Card";
 import UseTitle from "../UseTitle"
 const Header = () => {
-  UseTitle("fetch movies")
+  UseTitle("redux thunk")
   const dispatch = useDispatch();
   const { isLoading, error } = useSelector((state) => state.MoviesSlice);
   return (
