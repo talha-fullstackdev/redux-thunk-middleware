@@ -16,7 +16,6 @@ export const fetchMovies = createAsyncThunk("fetchMovies", async () => { //redux
     console.error("Error fetching movies:", error.message);
     throw error; // Propagate error to handle it in the reducer
   }  
-
 });
 
 const MoviesSlice = createSlice({
